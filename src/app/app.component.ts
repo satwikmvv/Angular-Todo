@@ -8,9 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   todoArray=[]
   addTodo(todo){
+    if(todo.value!==null && todo.value!==""){
       this.todoArray.push(todo.value)
       console.log(this,todo)
       todo.value=""
+    }else{
+      alert("Input Required")
+    }
   }
 
   deleteItem(value) {
@@ -22,7 +26,7 @@ export class AppComponent {
       this.todoArray.push(todoForm.value.todo)
       todoForm.resetForm()
       }else{
-        alert('Field required **')
+        alert('Input required ')
       }
     console.log(value)
   }
